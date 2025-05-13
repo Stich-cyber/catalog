@@ -3,13 +3,21 @@ let container = document.querySelector(".card-contanier");
 let sortSelect = document.querySelector("#sort-select");
 let categorySelect = document.querySelector("#category-select");
 let searchInput = document.querySelector("#search-input");
+let loader = document.querySelector(".loader");
 let products = [];
-fetch(api)
-  .then((response) => response.json())
-  .then((data) => {
+async function fetchProducts() {
+  try {
+    loader.style.display = "block";
+    let response = await fetch(api);
+    let data = await response.json();
     products = data;
     renderProducts(products);
-  });
+  } catch (error) {
+    console.error(error.message);
+  } finally {
+    loader.style.display = "none";
+  }
+}
 function renderProducts(productList) {
   container.innerHTML = "";
   productList.map((product) => {
@@ -45,7 +53,6 @@ categorySelect.addEventListener("change", () => {
     );
   });
   filteredProducts.sort((a, b) => a.category.localeCompare(b.category));
-
   renderProducts(filteredProducts);
 });
 searchInput.addEventListener("input", () => {
@@ -54,3 +61,4 @@ searchInput.addEventListener("input", () => {
   );
   renderProducts(searchedProducts);
 });
+fetchProducts();
