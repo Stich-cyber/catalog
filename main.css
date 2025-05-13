@@ -1,0 +1,96 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.title {
+  text-align: center;
+  color: #007bff;
+  margin-bottom: 20px;
+}
+
+.filters {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.filters select,
+.filters input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  outline: none;
+}
+
+.filters select:focus,
+.filters input:focus {
+  border-color: #007bff;
+}
+
+.card-contanier {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 200px;
+  text-align: center;
+  padding: 10px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.img-contanier {
+  height: 150px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.img-contanier img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover; 
+}
+
+.title {
+  font-weight: bold;
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+.category {
+  color: #555;
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+.price {
+  color: #007bff;
+  font-weight: bold;
+  font-size: 16px;
+  margin: 10px 0;
+}
